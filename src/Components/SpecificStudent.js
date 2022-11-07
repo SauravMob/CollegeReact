@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from "axios"
 import { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import '../App.css';
 
 class SpecificStudent extends Component {
 
