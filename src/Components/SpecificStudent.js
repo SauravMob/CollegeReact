@@ -36,10 +36,10 @@ class SpecificStudent extends Component {
     render() {
         return (
             <>
-                <div className="container my-3" style={{ marginLeft: "40px" }}>
+                <div className="Allstu" >
                     <h3>Specific Student Enrolled in the College</h3>
                 </div>
-                <div className="container my-3" key={this.state.id} style={{ marginLeft: "50px" }}>
+                <div className="Allstu" key={this.state.id}>
                     <li>{this.state.firstname}</li>
                     <li>{this.state.lastname}</li>
                     <li>{this.state.age}</li>

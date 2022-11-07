@@ -27,26 +27,26 @@ class PostApi extends Component {
 
   render() {
     return (
-      <div className='container my-3'>
+      <div className='Adstu'>
         <h3>Enter Details below to get admission in the college</h3>
         <form>
-          <div className="mb-3">
+          <div className="adform">
             <label htmlFor="exampleInputEmail1" className="form-label">First Name</label>
-            <input type="text" className="form-control" value={this.state.firstname} onChange={(e) => { this.setState({ firstanme: e.target.value }) }} />
+            <input type="text" className="form-control" value={this.state.firstname} onChange={(e) => { this.setState({ firstname: e.target.value }) }} />
           </div>
-          <div className="mb-3">
+          <div className="adform">
             <label htmlFor="exampleInputEmail1" className="form-label">Last Name</label>
             <input type="text" className="form-control" value={this.state.lastname} onChange={(e) => { this.setState({ lastname: e.target.value }) }} />
           </div>
-          <div className="mb-3">
+          <div className="adform">
             <label htmlFor="exampleInputEmail1" className="form-label">Age</label>
             <input type="text" className="form-control" value={this.state.age} onChange={(e) => { this.setState({ age: e.target.value }) }} />
           </div>
-          <div className="mb-3">
+          <div className="adform">
             <label htmlFor="exampleInputEmail1" className="form-label">Department</label>
             <input type="text" className="form-control" value={this.state.department} onChange={(e) => { this.setState({ department: e.target.value }) }} />
           </div>
-          <button onClick={this.postData()}>Submit</button>
+          <button onClick={(e)=>{this.postData(e)}}>Submit</button>
         </form>
       </div>
     )

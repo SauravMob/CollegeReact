@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import PropTypes from 'prop-types'
+import '../App.css';
 
 class Allstudents extends Component {
 
@@ -26,8 +27,8 @@ class Allstudents extends Component {
         if (this.state.students != null) {
             stu = this.state.students.map((element) => {
                 return <>
-                    <div className="container my-3" key={element.id}>
-                        <li type='square'>Student Number {element.id}</li>
+                    <div className="Allstu" key={element.id}>
+                        <li type='square'><b>Student Number {element.id}</b></li>
                         <li>{element.firstname}</li>
                         <li>{element.lastname}</li>
                         <li>{element.age}</li>
@@ -36,8 +37,9 @@ class Allstudents extends Component {
                 </>
             })
         }
-        return (
-            <div>{stu}</div>
+        return (<>
+        <div>{stu}</div>
+        </>
         )
     }
 }
