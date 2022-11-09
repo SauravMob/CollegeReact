@@ -19,7 +19,7 @@ class App extends Component {
               <Route exact path='/specific' element={<SpecificStudent url={'student/1'} />} />
               <Route exact path='/admission' element={<PostApi />} />
             </Routes>
-            <Sidebar />
+            <Sidebar url={'list'}/>
           </Router>
         </div>
       </>

@@ -81,3 +81,36 @@ body{
   font-size: 40px;
   margin-top: 290px;
 }
+
+.prepagination{
+  padding: 10px;
+  font-size: 15px;
+  margin-top: 370px;
+  margin-left: 755px;
+}
+
+.nextpagination{
+  padding: 10px;
+  font-size: 15px;
+  margin-left: 130px
+}
+
+.searchbar{
+  padding: 20px;
+}
+
+#search{
+  font-size: 12px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.suggestions{
+  cursor: pointer;
+  background-color: aliceblue;
+  border: 1px solid black;
+}
+
+.suggestions:hover{
+  background-color: aqua;
+}

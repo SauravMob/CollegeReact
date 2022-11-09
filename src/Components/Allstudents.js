@@ -5,21 +5,47 @@ import '../App.css';
 
 class Allstudents extends Component {
 
+    static defaultProps = {
+        url: "list"
+    }
+    
+    static propTypes = {
+        url: PropTypes.string.isRequired
+    }
+
     constructor(props) {
         super(props)
         this.state = {
+            page: 1,
+            Number: 2,
             students: null
         }
     }
 
-    componentDidMount() {
-        axios.get(`/Department/${this.props.url}`)
+    update() {
+        axios.get(`/Department/${this.props.url}?page=${this.state.page}&Number=${this.state.Number}`)
             .then((response) => {
                 this.setState({ students: response.data })
             })
             .catch((error) => {
                 console.log(error)
             })
+    }
+
+    componentDidMount(){
+        this.update()
+    }
+
+    NextClick = () => {
+        console.log("Next")
+        this.setState({page: this.state.page + 1})
+        this.update()
+    }
+    
+    PreviousClick = () => {
+        console.log("Previous")
+        this.setState({page: this.state.page - 1})
+        this.update()
     }
 
     render() {
@@ -39,17 +65,11 @@ class Allstudents extends Component {
         }
         return (<>
         <div>{stu}</div>
+        <button className='prepagination' onClick={this.PreviousClick}>Previous</button>
+        <button className='nextpagination' onClick={this.NextClick}>Next</button>
         </>
         )
     }
-}
-
-Allstudents.defaultProps = {
-    url: "list"
-}
-
-Allstudents.propTypes = {
-    url: PropTypes.string.isRequired
 }
 
 export default Allstudents
