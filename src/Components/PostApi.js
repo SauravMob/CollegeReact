@@ -8,6 +8,7 @@ class PostApi extends Component {
   constructor() {
     super()
     this.state = {
+      id:"",
       firstname: "",
       lastname: "",
       age: "",
@@ -17,7 +18,8 @@ class PostApi extends Component {
 
   postData = (e) => {
     e.preventDefault();
-    axios.post(`/Department/admission?firstname=${this.state.firstname}&lastname=${this.state.lastname}&age=${this.state.age}&department=${this.state.department}`, {
+    axios.post(`/Department/admission?id=${this.state.id}&firstname=${this.state.firstname}&lastname=${this.state.lastname}&age=${this.state.age}&department=${this.state.department}`, {
+      id: this.state.id,
       firstname: this.state.firstname,
       lastname: this.state.lastname,
       age: this.state.age,
@@ -31,6 +33,10 @@ class PostApi extends Component {
       <div className='Adstu'>
         <h3>Enter Details below to get admission in the college</h3>
         <form>
+          <div className="adform">
+            <label htmlFor="exampleInputEmail1" className="form-label">ID</label>
+            <input type="text" className="form-control" value={this.state.id} onChange={(e) => { this.setState({ id: e.target.value }) }} />
+          </div>
           <div className="adform">
             <label htmlFor="exampleInputEmail1" className="form-label">First Name</label>
             <input type="text" className="form-control" value={this.state.firstname} onChange={(e) => { this.setState({ firstname: e.target.value }) }} />

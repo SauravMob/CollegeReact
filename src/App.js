@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import PostApi from './Components/PostApi'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SpecificStudent from './Components/SpecificStudent'
-import Allstudents from './Components/Allstudents';
 import Sidebar from './Components/Sidebar';
+import Allstudents from './Components/Allstudents'; 
 import Home from './Components/Home';
 import './App.css';
 

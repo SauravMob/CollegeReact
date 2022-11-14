@@ -20,7 +20,6 @@ class SpecificStudent extends Component {
     componentDidMount() {
         axios.get(`/Department/${this.props.url}`)
             .then((response) => {
-
                 this.setState({
                     id: response.data.id,
                     firstname: response.data.firstname,
